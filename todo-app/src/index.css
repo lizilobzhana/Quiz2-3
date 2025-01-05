@@ -1,0 +1,240 @@
+.todo-app {
+  position: relative;
+  width: 500px;
+  max-width: 600px;
+  padding: 20px 100px;
+  background: white;
+  height: 90%;
+}
+
+input {
+  outline: none;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2 {
+  margin: 0;
+}
+
+/* Input field styling */
+.todo-input {
+  width: calc(100% - 80px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Add button styling */
+.add-button {
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bolder;
+  position: absolute;
+  right: 5%;
+  bottom: -75%;
+  color: white;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.add-button:hover {
+  background-color: #6961f8;
+}
+
+/* Todo list items */
+
+/* Buttons inside each todo item */
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* Modal content */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  height: 30%;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #333;
+}
+
+.modal input {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #252525;
+  border-radius: 4px;
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.modal button {
+  color: #6c63ff;
+  background-color: inherit;
+  padding: 10px 20px;
+  font-weight: bolder;
+  border: 2px solid #6c63ff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.modal button:hover {
+  background-color: #6c63ff;
+  color: white;
+}
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #6c63ff;
+  width: 80%; /* Adjust as needed */
+  position: relative;
+}
+
+.todo-content span {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.todo-actions {
+  display: none;
+  gap: 8px;
+}
+.todo-item:hover .todo-actions {
+  display: flex;
+}
+.todo-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-item button i {
+  pointer-events: none;
+}
+
+.todo-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+.editInput {
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.searchTodo {
+  padding: 10px;
+  border: 2px solid #6c63ff;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.filter,
+.darkMode {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.filter {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* darkmode */
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+body.dark-mode,
+body.dark-mode .todo-app,
+body.dark-mode .modal {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .modal {
+  background-color: #444 !important;
+  border-color: #fff !important;
+}
+body.dark-mode .todo-item button i {
+  color: white;
+}
+.filter-darkmode {
+  display: flex;
+  gap: 5px;
+}
+@media (max-width: 750px) {
+  .add-button {
+    right: 20%;
+    bottom: -60%;
+  }
+  .headerButtons {
+    width: 85%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
